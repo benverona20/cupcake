@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <meta content="initial-scale=1, width=device-width" name="viewport"/>
+    <head>
+        <title>Cupcake</title>
+    </head>
+    <body>
+        <form action="{{ url_for('insert_res') }}" method="POST">
+            Enter cake type:<input type="text" name="cake"><br>
+            Enter cake color:<input type="text" name="color"><br>
+            Enter cake is nice:<input type="bool" name="nice"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

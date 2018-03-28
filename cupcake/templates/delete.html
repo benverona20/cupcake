@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <meta content="initial-scale=1, width=device-width" name="viewport"/>
+    <head>
+        <title>Cupcake</title>
+    </head>
+    <body>
+        Select a cupcake to delete:
+        <form action="{{ url_for('delete_res') }}" method="POST">
+            <table>
+            {% for row in table %}
+                <tr>
+                    <td><input type="radio" name="rowid" value="{{ row['id'] }}" {% if row['id'] == 1 %}checked{% endif %}></td>
+                    <td>{{ row['cake'] }}</td>
+                    <td>{{ row['color'] }}</td>
+                    <td>{{ row['nice'] }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

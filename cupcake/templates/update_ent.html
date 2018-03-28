@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <meta content="initial-scale=1, width=device-width" name="viewport"/>
+    <head>
+        <title>Cupcake</title>
+    </head>
+    <body>
+        <form action="{{ url_for('update_res') }}" method="POST">
+        {% if cupcake.cake == 1 %}
+            Enter new cake type:<input type="text" name="cake"><br>
+        {% endif %}
+        {% if cupcake.color == 1 %}
+            Enter new cake color:<input type="text" name="color"><br>
+        {% endif %}
+        {% if cupcake.nice == 1 %}
+            Enter new if cake is nice:<input type="bool" name="nice"><br>
+        {% endif %}
+            <input type="hidden" name="rowid" value={{ cupcake.number }}>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

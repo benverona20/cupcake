@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <meta content="initial-scale=1, width=device-width" name="viewport"/>
+    <meta http-equiv="refresh" content="5;{{ url_for('index') }}" />
+    <head>
+        <title>Cupcake</title>
+    </head>
+    <body>
+        <b>Cupcakes:</b>
+        <table>
+            <tr>
+                <td><b>Cake</b></td>
+                <td><b>Color</b></td>
+                <td><b>Nice</b></td>
+            </tr>
+        {% for row in table %}
+            <tr>
+                <td>{{ row['cake'] }}</td>
+                <td>{{ row['color'] }}</td>
+                <td>{{ row['nice'] }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <p>Redirecting in 5 seconds...</p>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <meta content="initial-scale=1, width=device-width" name="viewport"/>
+    <head>
+        <title>Cupcake</title>
+    </head>
+    <body>
+        <p><b>You have selected the {{ cake }} cupcake.</b></p>
+        Check what you would like to update:
+        <form action="{{ url_for('update_ent') }}" method="POST">
+            <input type="checkbox" name="cake" value="1">Cake Type<br>
+            <input type="checkbox" name="color" value="1">Cake Color<br>
+            <input type="checkbox" name="nice" value="1">Cake is Nice<br>
+            <input type="hidden" name="rowid" value="{{ rowid }}">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

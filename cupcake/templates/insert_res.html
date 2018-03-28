@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <meta content="initial-scale=1, width=device-width" name="viewport"/>
+    <meta http-equiv="refresh" content="5;{{ url_for('index') }}" />
+    <head>
+        <title>Cupcake</title>
+    </head>
+    <body>
+        <p>{{ res }}</p>
+        <p>Redirecting in 5 seconds...</p>
+    </body>
+</html>
